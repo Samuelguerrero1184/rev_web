@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap');
+.mainH1 {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: white;
+    font-size: 4.5rem;
+    text-align: center;
+}
+
+.slogan {
+    height: 100vh; /* Full viewport height */
+    background: url("/background.png");
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Vertically centers the content */
+}
+
+.secondPane {
+    height: 100vh; /* Full viewport height */
+    margin: 0 10vw;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: baseline; /* Vertically centers the content */ 
+}
+
+.thirdPane {
+    background: url("/background2.png");
+    background-size: cover;
+    background-position: center;
+    height: 100vh; /* Full viewport height */
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: baseline; /* Vertically centers the content */ 
+}
+
+.services {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    padding: 0;
+    width: 100%;
+}
+
+.servicesH2 {
+    color: rgb(0, 0, 0);
+    margin-top: 1vh;
+    font-family: "Red Hat Display", sans-serif;
+    font-optical-sizing: auto;
+    font-size: xx-large;
+    font-weight: 700;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.servicesH3 {
+    color: rgb(0, 0, 0);
+    font-family: "Red Hat Display", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-size: large;
+    margin-top: 5vh;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.cards{
+    margin-top: 4vh;
+    padding: 0 20px;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}

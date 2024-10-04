@@ -2,32 +2,33 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+@import url('https://fonts.googleapis.com/css2?family=SUSE:wght@100..800&display=swap');
+
+* {
+  box-sizing: border-box;
+  font-family: "SUSE", sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+header {
+  flex-shrink: 0; /* Prevents the header from shrinking */
+  height: 80px; /* Or any height of your navbar */
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+main {
+  flex-grow: 1; /* Allows the content to take up the remaining space */
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+body, html {
+  background-color: rgb(255, 255, 255);
+  background-size: cover;
+  background-position: center;
+  max-height: 100vh;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  text-decoration: none;
 }

@@ -1,0 +1,75 @@
+.header{
+    position: fixed; ;
+    top: 0;
+    left: 0;
+    padding: 20px 10%;
+    width: 100%;
+    background-color: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    transition: background-color 1s ease;
+}
+
+.header.scrolled {
+    background-color: black;
+}
+
+.logo{
+    color: #F9B22D;
+    padding: 20px;
+    font-weight: 700;
+    font-size: large;
+    transition: color 0.3s ease     ;
+}
+
+.navBar a{
+    color: rgb(255, 255, 255);
+    position: relative;
+    margin-left: 40px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.navBar a::before{
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #F9B22D;
+    transition: .3s;
+}
+
+.navBar a:hover::before{
+    width: 100%;
+}
+
+.serviceCard {
+    background-color: transparent;
+    border-radius: 10px;
+    /* border: 3px solid rgb(0, 0, 0); */
+    box-shadow: 5px 5px 20px 5px rgba(0, 0, 0, 0.3);
+}
+
+.cardContent {
+    padding: 10px;
+    color: rgb(0, 0, 0);
+}
+
+.cardImage {
+    padding: 10px;
+    border-radius: 15px;
+    object-fit: cover; /* Asegúrate de que la imagen se ajuste correctamente */
+}
+
+@media (max-width: 480px){
+    .navBar a {
+        font-size: small;
+    }
+    .logo {
+        font-size: small;
+    }
+}
