@@ -1,75 +1,128 @@
-.header{
-    position: fixed; ;
-    top: 0;
-    left: 0;
-    padding: 20px 10%;
-    width: 100%;
-    background-color: transparent;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 100;
-    transition: background-color 1s ease;
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 20px 10%;
+  width: 100%;
+  background-color: transparent;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+  transition: background-color 1s ease;
 }
 
-.header.scrolled {
-    background-color: black;
+.servicesBg {
+  background-color: #000000; /* Yellowish for services */
 }
 
-.logo{
-    color: #F9B22D;
-    padding: 20px;
-    font-weight: 700;
-    font-size: large;
-    transition: color 0.3s ease     ;
+.aboutBg {
+  background-color: #000000; /* Blueish for about */
 }
 
-.navBar a{
-    color: rgb(255, 255, 255);
-    position: relative;
-    margin-left: 40px;
-    font-weight: 500;
-    transition: color 0.3s ease;
+.projectsBg {
+  background-color: #000000; /* Greenish for proyects */
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.8);
 }
 
-.navBar a::before{
-    content: "";
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: #F9B22D;
-    transition: .3s;
+.navBar a {
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
 }
 
-.navBar a:hover::before{
-    width: 100%;
+.navBar a:hover {
+  background-color: transparent; /* Add hover effect */
+}
+
+.logo {
+  color: #f9b22d;
+  padding: 20px;
+  font-weight: 700;
+  font-size: large;
+  transition: color 0.3s ease;
+}
+
+.navBar a {
+  color: rgb(255, 255, 255);
+  position: relative;
+  margin-left: 40px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.navBar a::before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #f9b22d;
+  transition: 0.3s;
+}
+
+.navBar a:hover::before {
+  width: 100%;
 }
 
 .serviceCard {
-    background-color: transparent;
-    border-radius: 10px;
-    /* border: 3px solid rgb(0, 0, 0); */
-    box-shadow: 5px 5px 20px 5px rgba(0, 0, 0, 0.3);
+  background-color: transparent;
+  border-radius: 10px;
+  box-shadow: 5px 5px 20px 5px rgba(0, 0, 0, 0.3);
+  width: 350px; /* Fixed width for the card */
+  height: 450px; /* Fixed height for the card */
+  display: flex;
+  flex-direction: column;
+}
+
+.titleWrap {
+  font-weight: bold;
+  font-size: large;
+  word-wrap: break-word; /* Permite que el texto se ajuste dentro del contenedor */
+  overflow-wrap: break-word;
+}
+
+.featureList {
+  list-style-type: disc; /* Add bullets to the list */
+  padding-left: 20px; /* Add some padding to indent the list */
+  margin: 10px 0;
 }
 
 .cardContent {
-    padding: 10px;
-    color: rgb(0, 0, 0);
+  padding: 10px;
+  color: rgb(0, 0, 0);
 }
 
 .cardImage {
-    padding: 10px;
-    border-radius: 15px;
-    object-fit: cover; /* Asegúrate de que la imagen se ajuste correctamente */
+  padding: 10px;
+  border-radius: 15px;
+  object-fit: cover; /* Asegúrate de que la imagen se ajuste correctamente */
 }
 
-@media (max-width: 480px){
-    .navBar a {
-        font-size: small;
-    }
-    .logo {
-        font-size: small;
-    }
+.cardSize {
+    margin: 20px 0;
+    width: 30vw;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    transition: box-shadow 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.cardSize:hover {
+  box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.3); /* Increase shadow on hover */
+}
+
+.imageWrapper {
+    position: relative;
+    width: 100%;
+    height: 40vh; /* You can adjust this value based on your design */
+    overflow: hidden; /* Ensures the image does not overflow */
+  }
+
+@media (max-width: 480px) {
+  .navBar a {
+    font-size: small;
+  }
+  .logo {
+    font-size: small;
+  }
 }

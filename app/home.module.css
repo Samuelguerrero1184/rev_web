@@ -1,83 +1,190 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap");
+
 .mainH1 {
-    font-family: "Bebas Neue", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    color: white;
-    font-size: 4.5rem;
-    text-align: center;
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: white;
+  font-size: 4.5rem;
+  text-align: center;
 }
 
 .slogan {
-    height: 100vh; /* Full viewport height */
-    background: url("/background.png");
-    background-size: cover;
-    background-position: center;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center; /* Vertically centers the content */
+  height: 100vh; /* Full viewport height */
+  background: url("/background.png");
+  background-size: cover;
+  background-position: center;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* Vertically centers the content */
 }
 
-.secondPane {
-    height: 100vh; /* Full viewport height */
-    margin: 0 10vw;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: baseline; /* Vertically centers the content */ 
-}
-
-.thirdPane {
-    background: url("/background2.png");
-    background-size: cover;
-    background-position: center;
-    height: 100vh; /* Full viewport height */
-    width: 100vw;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: baseline; /* Vertically centers the content */ 
+.pane {
+  height: 100vh; /* Full viewport height */
+  margin: 0 10vw;
+  padding: 80px 0 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: baseline; /* Vertically centers the content */
 }
 
 .services {
-    display: flex;
-    flex-direction: column;
-    margin: 0 auto;
-    padding: 0;
-    width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  padding: 0;
+  width: 100%;
 }
 
 .servicesH2 {
-    color: rgb(0, 0, 0);
-    margin-top: 1vh;
-    font-family: "Red Hat Display", sans-serif;
-    font-optical-sizing: auto;
-    font-size: xx-large;
-    font-weight: 700;
-    margin-left: 20px;
-    margin-right: 20px;
+  color: rgb(0, 0, 0);
+  margin-top: 1vh;
+  font-family: "Red Hat Display", sans-serif;
+  font-optical-sizing: auto;
+  font-size: xx-large;
+  font-weight: 700;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
 .servicesH3 {
-    color: rgb(0, 0, 0);
-    font-family: "Red Hat Display", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 500;
-    font-size: large;
-    margin-top: 5vh;
-    margin-left: 20px;
-    margin-right: 20px;
+  color: rgb(0, 0, 0);
+  font-family: "Red Hat Display", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-size: large;
+  margin-top: 5vh;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
-.cards{
-    margin-top: 4vh;
-    padding: 0 20px;
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
+.cards {
+  margin-top: 4vh;
+  padding: 0 20px;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
 }
+
+/* Container that holds the sections */
+.container {
+  height: 100vh; /* Full screen height */
+  overflow-y: scroll; /* Enable vertical scrolling */
+  scroll-snap-type: y mandatory; /* Enable snapping on the Y-axis */
+  scroll-behavior: smooth; /* Smooth scroll between sections */
+}
+
+/* Each section */
+.section {
+  scroll-snap-align: start; /* Snap to the start of each section */
+}
+
+.sectionNormal {
+    height: 100vh;
+}
+
+.sectionLarge {
+    height: 200vh; /* Full screen height for each section */
+  }
+
+.aboutTitle {
+  background: #f9b22d;
+  width: 15vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.aboutTitleText {
+  transform: rotate(180deg);
+  writing-mode: vertical-rl;
+  text-align: center;
+  font-family: "Red Hat Display", sans-serif;
+  font-size: 6rem;
+  color: white;
+}
+
+.aboutText {
+  display: flex;
+  flex-direction: column;
+  font-family: "Red Hat Display", sans-serif;
+  font-size: small;
+  padding: 20px 80px;
+  width: auto;
+  line-height: 2;
+  justify-content: baseline;
+}
+
+.aboutSection {
+  height: 200vh; /* Full viewport height */
+  margin: 0 10vw;
+  padding: 80px 0 0 0;
+}
+
+.aboutSubSection {
+  height: 100vh; /* Full viewport height */
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: baseline; /* Vertically centers the content */
+}
+
+.aboutBanner {
+    object-fit: cover; /* This ensures the image will cover the container */
+    object-position: center 80%;
+    width: 100%;
+    height: 100%;  
+}
+
+.bannerContainer {
+    width: 100%; /* Make the image container full width */
+    height: 250px; /* Set a fixed height for cropping */
+    position: relative; /* Required for layout="fill" in Next.js Image component */
+    overflow: hidden; /* Ensure the image crops */
+    border-radius: 0 20px 20px 0;
+}
+
+.aboutIcons {
+    display: flex;
+    flex-direction: column;
+    font-family: "Red Hat Display", sans-serif;
+    font-size: small;
+    padding: 20px 80px;
+    width: 100%;
+    line-height: 2;
+    justify-content: space-between;
+  }
+
+.whyUsContainer {
+    display: grid;
+    justify-content: center;
+    justify-items: center;
+    grid-template-columns: repeat(2, 1fr); /* Two columns */
+    grid-gap: 20px; /* Space between grid items */
+    padding: 20px;
+    width: 100%;
+  }
+  
+  .whyUsItem {
+    display: flex;
+    align-items: center; /* Vertical alignment of the icon and subtitle */
+    justify-content: space-between;
+    gap: 10px; /* Space between the icon and the text */
+    width: 100%;
+    padding: 20px;
+  }
+  
+  .whyUsIcon {
+    width: 50px; /* Fixed width for icons */
+    height: auto; /* Maintain aspect ratio */
+  }
+  

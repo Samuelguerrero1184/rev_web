@@ -1,41 +1,56 @@
-'use client'
+'use client';
 
-import React, { useEffect } from 'react';
-import styles from "./components.module.css";
+import React, { useEffect, useState } from 'react';
+import { usePathname } from 'next/navigation'; // Hook to get current route
+import styles from './components.module.css';
 
 export default function CustomNavbar() {
+  const [activeSection, setActiveSection] = useState('home'); // To track the active section
+  const pathname = usePathname(); // Get current route
+
   useEffect(() => {
-    const handleScroll = () => {
-      const header = document.querySelector(`.${styles.header}`) as HTMLElement;
-      const scrollPercentage = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+    const sections = document.querySelectorAll('div[id]'); // Get all sections
 
-      if (scrollPercentage > 20) { // Cambia 10 por el porcentaje de desplazamiento deseado
-        if (header) {
-          header.classList.add(styles.scrolled);
-        }
-      } else {
-        if (header) {
-          header.classList.remove(styles.scrolled);
-        }
-      }
-    };
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const sectionId = entry.target.id;
+            setActiveSection(sectionId); // Update the active section based on the current view
+          }
+        });
+      },
+      { threshold: 0.7 } // Trigger when 70% of the section is visible
+    );
 
-    window.addEventListener('scroll', handleScroll);
+    sections.forEach((section) => {
+      observer.observe(section); // Observe each section
+    });
 
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      sections.forEach((section) => {
+        observer.unobserve(section); // Cleanup on unmount
+      });
     };
   }, []);
 
+  // Determine the background based on both the current path and the active section
+  const navbarClass = `${styles.header} 
+    ${activeSection === 'services' ? styles.servicesBg : ''}
+    ${activeSection === 'about' ? styles.aboutBg : ''}
+    ${activeSection === 'contact' ? styles.contactBg : ''}
+    ${pathname === '/proyects' ? styles.projectsBg : ''}`; // Add background for the projects page
+
   return (
-    <header className={styles.header}>
+    <header className={navbarClass}>
       <a href='/' className={styles.logo}>REV CONTRACTORS LLC</a>
       <nav className={styles.navBar}>
         <a href='/home'>Home</a>
         <a href='/services'>Services</a>
+        <a href='/proyects'>Projects</a>
         <a href='/about'>About</a>
         <a href='/contact'>Contact</a>
       </nav>
     </header>
   );
-} 
+}

@@ -1,4 +1,3 @@
-import { NextUIProvider } from '@nextui-org/react';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
@@ -24,10 +23,8 @@ export default function RootLayout({
         <title>REV Contractors</title>
       </head>
       <body className={inter.className}>
-        <NextUIProvider>
           <CustomNavbar />
           <main>{children}</main>
-        </NextUIProvider>
       </body>
     </html>
   );

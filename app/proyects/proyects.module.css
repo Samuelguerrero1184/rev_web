@@ -1,0 +1,30 @@
+.container {
+    height: 100vh; /* Full screen height */
+    overflow-y: scroll; /* Enable vertical scrolling */
+    scroll-snap-type: y mandatory; /* Enable snapping on the Y-axis */
+    scroll-behavior: smooth; /* Smooth scroll between sections */
+}
+
+.background {
+    height: 100vh; /* Full viewport height */
+    background: rgb(244, 244, 244) ;
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+    padding: 0;
+}
+
+.cards {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 3vw;
+    background: transparent;
+}
+
+.bread{
+    margin-top: 80px;
+    padding: 10px 3vw;
+}
